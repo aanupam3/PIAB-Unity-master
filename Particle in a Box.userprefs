@@ -1,0 +1,31 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/arrowManagerQ.cs">
+    <Files>
+      <File FileName="Assets/Scripts/tutorialManagerQ.cs" Line="305" Column="21" />
+      <File FileName="Assets/Scripts/playerController.cs" Line="19" Column="3" />
+      <File FileName="Assets/Scripts/arrowManagerQ.cs" Line="137" Column="25" />
+      <File FileName="Assets/Scripts/tutorialManager.cs" Line="25" Column="1" />
+      <File FileName="Assets/Scripts/lightSourceScript.cs" Line="29" Column="139" />
+      <File FileName="Assets/Scripts/textQ.cs" Line="26" Column="87" />
+      <File FileName="Assets/Scripts/qParticleScript.cs" Line="4" Column="1" />
+      <File FileName="Assets/Scripts/text.cs" Line="32" Column="5" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="26" Column="21" />
+      <File FileName="Assets/Scripts/weightScript.cs" Line="64" Column="14" />
+      <File FileName="Assets/Scripts/spawnScript.cs" Line="20" Column="130" />
+    </Files>
+    <Pads>
+      <Pad Id="ClassPad">
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="spawnScript" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -1,0 +1,109 @@
+fileFormatVersion: 2
+<<<<<<< Updated upstream
+guid: 79edf379ac5d14bdbb0b36d24266cd5d
+timeCreated: 1442125362
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Next_Button_Sprite_0
+    21300002: Next_Button_Sprite_1
+    21300004: Next_Button_Sprite_2
+=======
+guid: a56e7d49879f5449594a677707a76100
+timeCreated: 1442106730
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName: {}
+>>>>>>> Stashed changes
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+<<<<<<< Updated upstream
+    aniso: 16
+=======
+    aniso: -1
+>>>>>>> Stashed changes
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+<<<<<<< Updated upstream
+  spriteMode: 2
+=======
+  allowsAlphaSplitting: 0
+  spriteMode: 1
+>>>>>>> Stashed changes
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+<<<<<<< Updated upstream
+    sprites:
+    - name: Next_Button_Sprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 134
+        height: 62
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Next_Button_Sprite_1
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 0
+        width: 134
+        height: 62
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Next_Button_Sprite_2
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 0
+        width: 134
+        height: 62
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+=======
+    sprites: []
+>>>>>>> Stashed changes
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

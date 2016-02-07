@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/WireColor.cs">
+    <Files>
+      <File FileName="Assets/Scripts/arrowMotion.cs" Line="25" Column="42" />
+      <File FileName="Assets/Scripts/WireColor.cs" Line="93" Column="33" />
+      <File FileName="Assets/Scripts/PsiCalc.cs" Line="1" Column="1" />
+      <File FileName="Assets/Resources/WireShader.shader" Line="1" Column="1" />
+      <File FileName="Assets/Shaders/UnityVC/StandardVC.shader" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PotentialProfile.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
