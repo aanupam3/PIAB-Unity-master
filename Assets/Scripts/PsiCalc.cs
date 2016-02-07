@@ -68,8 +68,8 @@ public class PsiCalc : MonoBehaviour {
 
 //		vertical_steps=100;
 		 //number of eigen energies
-		xmin = -3.86f;
-		xmax = 4.15f;
+		xmin = -3.78f;
+		xmax = 4.1f;
 		xss = numeric.linspace(-1.0f, 1.0f, num_points);
 
 
