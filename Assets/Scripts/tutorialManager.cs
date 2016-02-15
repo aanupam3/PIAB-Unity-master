@@ -77,8 +77,8 @@ public class tutorialManager : MonoBehaviour {
 			{
 				ballFadeScript.ball = true;
 				c=1;
-				if(ballFadeScript.ball)
-					Debug.Log (ballFadeScript.ball);
+//				if(ballFadeScript.ball)
+//					Debug.Log (ballFadeScript.ball);
 			}
 
 		}

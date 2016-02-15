@@ -15,7 +15,7 @@ public class weightScript : MonoBehaviour {
 		initPosition = gameObject.transform.position;
 		flag =0;
 		animator = gameObject.GetComponent<Animator>();
-		player =  GameObject.FindGameObjectWithTag("Player");
+		player =  (GameObject)GameObject.Find("PlayerQ");
 		spawn=  GameObject.FindGameObjectWithTag("Spawn");
 //		spawn.transform.position = new Vector3(-4.51f,-0.58f,0);
 

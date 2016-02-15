@@ -30,9 +30,9 @@ public class cameraScript : MonoBehaviour {
 			float vertExtent = Camera.main.orthographicSize;  
 			float horzExtent = vertExtent * Screen.width / Screen.height;
 			spriteBounds = GameObject.Find("BG (1)").GetComponentInChildren<SpriteRenderer>();
-			target = GameObject.FindWithTag("Player").transform;
-			player = GameObject.FindGameObjectWithTag("Player");
-			
+			player = (GameObject)GameObject.Find("Player");
+			target = player.transform;
+
 			leftBound = -spriteBounds.sprite.bounds.size.x+0.2f;//(float)(horzExtent - spriteBounds.sprite.bounds.size.x / 2.0f);
 			rightBound = -0.2f;
 //			//rightBound = (float)(spriteBounds.sprite.bounds.size.x / 2.0f - horzExtent);
@@ -51,12 +51,12 @@ public class cameraScript : MonoBehaviour {
 			float vertExtent = horzExtent * Screen.height / Screen.width;  
 
 			spriteBounds = GameObject.Find("BG").GetComponentInChildren<SpriteRenderer>();
-			target = GameObject.FindWithTag("Player").transform;
-			player = GameObject.FindGameObjectWithTag("Player");
+			player = (GameObject)GameObject.Find("PlayerQ");
+			target = player.transform;
 			
 			topBound = spriteBounds.sprite.bounds.size.y/2-1.1f;//(float)(horzExtent - spriteBounds.sprite.bounds.size.x / 2.0f);
 			bottomBound = -spriteBounds.sprite.bounds.size.y/2+1.1f;
-			Vector3 pos = new Vector3(transform.position.x, Mathf.Lerp (transform.position.y,target.position.y,0.1f), transform.position.z);
+			Vector3 pos = new Vector3(transform.position.x, Mathf.Lerp (transform.position.y,target.position.y,0.9f), transform.position.z);
 			pos.y = Mathf.Clamp(pos.y, bottomBound, topBound);
 			//pos.y = Mathf.Clamp(pos.y, bottomBound, topBound);
 			transform.position = pos;

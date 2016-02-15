@@ -14,21 +14,23 @@ public class playerController : MonoBehaviour
 	GameObject floor, particle, spawn, door; 
 	public static int score = 0;
 	// Use this for initialization
-
+	bool tut;
 	void Start()
 	{
-		animator = this.GetComponent<Animator>();
+		animator = GetComponent<Animator>();
+		tut = true;
 		playerRgb = GetComponent<Rigidbody2D>();
-		animator.SetBool("grounded",true);
+		animator.SetBool("grounded",false);
 		floor = GameObject.FindGameObjectWithTag("Floor");
 		door = GameObject.FindGameObjectWithTag("Door");
 		particle = GameObject.FindGameObjectWithTag("Particle");
 		spawn = GameObject.FindGameObjectWithTag("Spawn");
-		if(Application.loadedLevelName != "Quantum1")
+		animator.SetTrigger("Lock");
+		if(Application.loadedLevelName == "Quantum1a")
 			animator.SetTrigger("Unlock");
 
 	}
-	
+
 	// Update is called once per frame
 	void FixedUpdate()
 	{
@@ -38,10 +40,11 @@ public class playerController : MonoBehaviour
 			{
 				playerRgb.simulated = false;
 			}
-			else
+			else if(tut)
 			{
 				playerRgb.simulated = true;
 				animator.SetTrigger("Unlock");
+				tut = false;
 			}
 				
 		}
@@ -52,13 +55,17 @@ public class playerController : MonoBehaviour
 			if(tutorialManagerQ.i<=12 || (tutorialManagerQ.i>=14 && tutorialManagerQ.i<17))
 			{
 				//Debug.Log ("hey");
-				if(playerRgb.transform.position.y <=-1.342f)
+
+				if(grounded && Time.fixedTime>1)
+				{
 					playerRgb.simulated = false;
+				}
 			}
 			else
 			{
 				playerRgb.simulated = true;
 				animator.SetTrigger("Unlock");
+
 			}
 				
 		}
@@ -100,10 +107,14 @@ public class playerController : MonoBehaviour
 		{
 			animator.SetInteger("Horizontal",-1);
 		}
+		if(Input.GetKey(KeyCode.Space) && Application.loadedLevelName == "classical" && grounded)
+		{
+			playerRgb.velocity = new Vector2(playerRgb.velocity.x,playerRgb.velocity.y + 1.6f);
+			grounded = false;
+		}
 
+		grounded = gameObject.GetComponent<CircleCollider2D>().IsTouchingLayers();
 		playerRgb.velocity = new Vector2(horizontal*speed,playerRgb.velocity.y);
-	
-			
 
 
 
@@ -113,13 +124,16 @@ public class playerController : MonoBehaviour
 
 		Collider2D other = other2.collider;
 		Collider2D pColl = GetComponent<CircleCollider2D>();
-		if (Input.GetKey(KeyCode.Space) && pColl.IsTouching(other) && playerRgb.velocity.y<2.5f && (Application.loadedLevelName == "classical" || Application.loadedLevelName == "end")) 
-		{
-
-			//playerRgb.AddForce(transform.up*jumpForce);
-			playerRgb.velocity = new Vector2(playerRgb.velocity.x,playerRgb.velocity.y + 2.8f);
-		}
-
+//		if (Input.GetKey(KeyCode.Space) && pColl.IsTouching(other) && playerRgb.velocity.y<2.5f && (Application.loadedLevelName == "classical" || Application.loadedLevelName == "end")) 
+//		{
+//
+//			//playerRgb.AddForce(transform.up*jumpForce);
+//			playerRgb.velocity = new Vector2(playerRgb.velocity.x,playerRgb.velocity.y + 2.8f);
+//		}
+//		if(other.tag == "Floor")
+//		{
+//			grounded = true;
+//		}
 		if(other.tag == "Particle")
 		{
 
@@ -135,6 +149,7 @@ public class playerController : MonoBehaviour
 		yield return new WaitForSeconds(0.6f);
 		animator.SetBool("Dead",false);
 		dead = false;
+
 		if(Application.loadedLevelName == "classical")
 		{
 			if(tutorialManager.i<9)
@@ -145,9 +160,9 @@ public class playerController : MonoBehaviour
 		else
 			playerRgb.transform.position = new Vector2(-4.71f,-1.342f);
 
-		yield return new WaitForSeconds(0.3f);
-		playerRgb.simulated = true;
+		yield return new WaitForSeconds(0.1f);
 
+		playerRgb.simulated = true;
 		//Debug.Log(score);
 	}
 

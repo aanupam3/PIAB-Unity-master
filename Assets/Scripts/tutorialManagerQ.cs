@@ -15,7 +15,7 @@ public class tutorialManagerQ : MonoBehaviour {
 		//if(i!=13 || i!=15)
 
 		//i=0;
-		player = GameObject.FindGameObjectWithTag("Player");
+		player = (GameObject)GameObject.Find("PlayerQ");
 		c=0;
 		ccount = true;
 		appOnce = true;

@@ -33,8 +33,8 @@ public class EnergyLevels : MonoBehaviour {
 	public void energyPlot()
 	{
 
-		Material m = (Material)Resources.Load("EnergyLevels");
-
+		Material m = (Material)Resources.Load("Line");
+//		Material m = (Material)Resources.Load("Line");
 		for(int i=0;i<PsiCalc.num_elevel;i++)
 		{
 			if(e_levels[i]!=null)
@@ -50,8 +50,10 @@ public class EnergyLevels : MonoBehaviour {
 			e_levels[i].tag = "EnergyLevel";
 			LineRenderer lineRendererE = e_levels[i].GetComponent<LineRenderer>();
 			GameObject Elabel = (GameObject)GameObject.Find("E"+i);
-//			Elabel.gameObject.transform.parent = e_levels[i];
+
+//			Elabel.transform.parent = e_levels[i].transform;
 			Elabel.transform.position = new Vector3(-4.08f,PsiCalc.energy_set[i]/2 + PsiCalc.yOffset - 0.4f,0.1f);
+
 			lineRendererE.material = m;
 			lineRendererE.SetColors(new Color(1,1,1,0.2f),new Color(1,1,1,0.2f));
 			lineRendererE.SetWidth(0.02f,0.02f);
@@ -70,7 +72,7 @@ public class EnergyLevels : MonoBehaviour {
 			
 			else
 			{
-				lineRendererE.material = (Material)Resources.Load("EnergyLevels");
+				lineRendererE.material = (Material)Resources.Load("Line");
 				lineRendererE.SetColors(new Color(1,1,1,0.8f),new Color(1,1,1,0.8f));
 			}
 			

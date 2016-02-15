@@ -18,8 +18,14 @@ public class arrowManagerQ : MonoBehaviour {
 		{
 			//Debug.Log (t);
 			arrows = ArrayTools.PushLast(arrows,t.gameObject);
+//			Debug.Log(t.name);
 		}
-
+//		Debug.Log(transform.childCount);
+//		for(int i=0;i<transform.childCount;i++)
+//		{
+//			
+//		}
+		Debug.Log("Arrow length: " + arrows.Length);
 	
 	}
 	

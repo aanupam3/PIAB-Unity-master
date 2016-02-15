@@ -102,8 +102,10 @@ public class PotentialProfile : MonoBehaviour {
 			
 		}
 		//gameObject.GetComponentsInChildren<LineRenderer>()[1].SetPosition(0, new Vector3(-4,5,0));
-		gameObject.GetComponentsInChildren<LineRenderer>()[1].SetPosition(1, new Vector3(-4,PsiCalc.pe_profile[0]/2 + PsiCalc.yOffset,0));
-		gameObject.GetComponentsInChildren<LineRenderer>()[2].SetPosition(1, new Vector3(4,PsiCalc.pe_profile[PsiCalc.pe_profile.Length-1]/2 + PsiCalc.yOffset,0));
+		gameObject.GetComponentsInChildren<LineRenderer>()[1].SetPosition(0, new Vector3(PsiCalc.xmin,5,0));
+		gameObject.GetComponentsInChildren<LineRenderer>()[1].SetPosition(1, new Vector3(PsiCalc.xmin,PsiCalc.pe_profile[0]/2 + PsiCalc.yOffset,0));
+		gameObject.GetComponentsInChildren<LineRenderer>()[2].SetPosition(0, new Vector3(x-PsiCalc.dx,5,0));
+		gameObject.GetComponentsInChildren<LineRenderer>()[2].SetPosition(1, new Vector3(x-PsiCalc.dx,PsiCalc.pe_profile[PsiCalc.pe_profile.Length-1]/2 + PsiCalc.yOffset,0));
 		//Debug.Log(gameObject.GetComponentsInChildren<LineRenderer>()[1].name);
 
 	}

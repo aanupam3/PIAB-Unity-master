@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/classical.unity
+- path: Assets/Scenes/Quantum1.unity
   isLoaded: 1
   isActive: 1

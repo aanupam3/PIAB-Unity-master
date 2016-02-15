@@ -82,14 +82,15 @@ public class PsiCalc : MonoBehaviour {
 		energy_set = (float[])solution[0];
 		ArrayTools.Update(energy_set,x => x+yOffset2);
 		psi_set = (float[][])solution[1];
-		lineRenderer.SetVertexCount(num_points);
+
 		 
 		psi_valuesInit = psi_set[E]; 
+		lineRenderer.SetVertexCount(psi_valuesInit.Length);
+//		Debug.Log(psi_valuesInit.Length);
 		float a = (E+1.0f)/num_elevel;
 //		Debug.Log(a);
 		vertical_steps = Mathf.FloorToInt(50.0f/a);
 		psiAnim = psiMotionArray(psi_valuesInit,vertical_steps);
-
 		probM = prob(psi_valuesInit);
 		cumprob = new float[probM.Length];
 		cumprob[0]=probM[0];
@@ -109,7 +110,9 @@ public class PsiCalc : MonoBehaviour {
 			cumprob[i] = cumprob[i]/sumprob;
 		}
 		EnergyLevels.ePlotsignal = true;
+		this.i=0;
 		GameObject.Find("Wire").GetComponent<WireColor>().probSignal = true;
+//		Debug.Log(psiAnim.Length);
 	}
 	
 	// Update is called once per frame
@@ -118,6 +121,7 @@ public class PsiCalc : MonoBehaviour {
 		if(calcSignal)
 		{
 			psiCalcDisplay();
+
 			calcSignal = false;
 		}
 
@@ -140,16 +144,19 @@ public class PsiCalc : MonoBehaviour {
 		}
 		float x = xmin;
 		lineRenderer.SetPosition(0, new Vector3(xmin-dx,yOffset2,-0.1f));
-
-		for(int j=1;j<num_points-1;j++)
+//		Debug.Log(i);
+		for(int j=1;j<psi_valuesInit.Length-1;j++)
 		{
 			//Debug.Log (x);
 
-			lineRenderer.SetPosition(j, new Vector3(x,psiAnim[i][j-1]+yOffset2,-0.1f));
+//			Debug.Log(psiAnim[i][j-1]);
 			x = x + dx;
+			lineRenderer.SetPosition(j, new Vector3(x,psiAnim[i][j]+yOffset2,-0.1f));
+
+
 
 		}
-		lineRenderer.SetPosition(num_points-1, new Vector3(xmax-2*dx,yOffset2,-0.1f));
+		lineRenderer.SetPosition(psi_valuesInit.Length-1, new Vector3(xmax-2*dx,yOffset2,-0.1f));
 //		lineRenderer.SetPosition(num_points, new Vector3(xmax,yOffset2,-0.1f));
 		
 		
@@ -160,7 +167,7 @@ public class PsiCalc : MonoBehaviour {
 	float[][] psiMotionArray(float[] psi_valuesInit, int steps)
 	{
 		float[][] ret = new float[steps][];
-
+//		Debug.Log("Steps: "+steps);
 		for(int i=0; i<steps;i++)
 		{
 			ret[i] = new float[psi_valuesInit.Length];

@@ -24,7 +24,7 @@ public class WireColor : MonoBehaviour {
 	{
 		if(probSignal)
 		{
-			Debug.Log("Plot Wire");
+//			Debug.Log("Plot Wire");
 			wirePlot();
 			probSignal = false;
 		}

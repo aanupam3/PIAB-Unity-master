@@ -6,7 +6,9 @@ public class slidingDoorScript2 : MonoBehaviour {
 	// Use this for initialization
 	public static bool doorOpen2 = false;
 	float speed = 0.01f;
+	GameObject player;
 	void Start () {
+		player = (GameObject)GameObject.Find("Player");
 	
 	}
 	
@@ -26,7 +28,7 @@ public class slidingDoorScript2 : MonoBehaviour {
 
 		}
 
-		if(GameObject.FindGameObjectWithTag("Player").transform.position.x>-5f)
+		if(player.transform.position.x>-5f)
 		{
 			if(transform.position.y<-0.55f)
 				gameObject.transform.position = new Vector2(transform.position.x, transform.position.y + 10*speed);

@@ -12,7 +12,7 @@ public class weightScript2 : MonoBehaviour {
 	int flag =0;
 	void Start () {
 		animator = gameObject.GetComponent<Animator>();
-		player =  GameObject.FindGameObjectWithTag("Player");
+		player =  (GameObject)GameObject.Find("Player");
 		spawn=  GameObject.FindGameObjectWithTag("Spawn");
 
 	}
@@ -33,13 +33,14 @@ public class weightScript2 : MonoBehaviour {
 		else
 			oscillate = oscillate - 0.0007f;
 		flag =1;
-		
+//		Debug.Log(player.transform.position);
+//		gameObject.transform.position = player.transform.position;
 	}
 
 
 	void OnTriggerStay2D(Collider2D other) 
 	{
-
+		
 		if(Input.GetKeyUp(KeyCode.UpArrow) && other.tag == "Player" && picked == false && flag==1)
 		{
 			picked = true;
@@ -65,6 +66,7 @@ public class weightScript2 : MonoBehaviour {
 		if(picked)
 		{
 			gameObject.transform.position = player.transform.position;
+			Debug.Log(gameObject.transform.position);
 		}
 
 		if(playerController.dead)
