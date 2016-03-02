@@ -56,7 +56,7 @@ public class weightScript2 : MonoBehaviour {
 		{
 			Destroy(gameObject);
 			playerController.score += 1000;
-			Debug.Log(playerController.score);
+//			Debug.Log(playerController.score);
 			other.GetComponent<BallMotion>().TE += 6f;
 			picked = false;
 			other.GetComponent<Animator>().SetTrigger("ballShine");
@@ -66,7 +66,7 @@ public class weightScript2 : MonoBehaviour {
 		if(picked)
 		{
 			gameObject.transform.position = player.transform.position;
-			Debug.Log(gameObject.transform.position);
+//			Debug.Log(gameObject.transform.position);
 		}
 
 		if(playerController.dead)

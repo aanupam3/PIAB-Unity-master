@@ -25,7 +25,7 @@ public class arrowManagerQ : MonoBehaviour {
 //		{
 //			
 //		}
-		Debug.Log("Arrow length: " + arrows.Length);
+//		Debug.Log("Arrow length: " + arrows.Length);
 	
 	}
 	

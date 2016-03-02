@@ -5,39 +5,34 @@ public class weightScript : MonoBehaviour {
 
 	// Use this for initialization
 	Animator animator;
-	float oscillate = 0;
+	float oscillate;
 	bool increase = true;
 	GameObject player, spawn;
 	public bool picked = false;
-	int flag=0;
+	int flag;
+	float extent, startY;
 	Vector2 initPosition;
 	void Start () {
 		initPosition = gameObject.transform.position;
 		flag =0;
+		extent = 0.05f;
+		startY = transform.position.y;
+		oscillate = 0.001f;
 		animator = gameObject.GetComponent<Animator>();
 		player =  (GameObject)GameObject.Find("PlayerQ");
 		spawn=  GameObject.FindGameObjectWithTag("Spawn");
-//		spawn.transform.position = new Vector3(-4.51f,-0.58f,0);
+		gameObject.transform.position = new Vector2(gameObject.transform.position.x,gameObject.transform.position.y+oscillate);
 
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{		
-		if(oscillate >=0.01f)
-		increase = false;
-		
-		if(oscillate<=-0.01f)
-			increase = true;
-		
-		gameObject.transform.position = new Vector2(gameObject.transform.position.x,gameObject.transform.position.y+oscillate);
-		
-		if(increase)
-			oscillate = oscillate + 0.0007f;
-		else
-			oscillate = oscillate - 0.0007f;
+		if(Mathf.Abs(startY-transform.position.y)>=extent)
+			oscillate = -1*oscillate;
 
-		flag = 1;
+		gameObject.transform.position = new Vector2(gameObject.transform.position.x,gameObject.transform.position.y+oscillate);
+		flag =1;
 	}
 
 

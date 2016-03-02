@@ -111,6 +111,7 @@ public class tutorialManagerQ : MonoBehaviour {
 				gameObject.GetComponent<Image>().color = c;
 				
 			}
+
 			if(tag == "PsiCalc")
 				GetComponent<LineRenderer>().enabled = true;
 			if(gameObject.name == "MeasurementLine")
@@ -262,22 +263,22 @@ public class tutorialManagerQ : MonoBehaviour {
 			}
 
 		}
-		if(i==10)
-		{
-			if(gameObject.tag == "Weight")
-			{
-				GetComponent<Animator>().ResetTrigger("fade");
-				GetComponent<Animator>().SetTrigger("fadeOut");
-			}
-		}
-		if(i==11)
-		{
-			if(gameObject.tag == "Weight")
-			{
-				GetComponent<Animator>().ResetTrigger("fadeOut");
-				GetComponent<Animator>().SetTrigger("fade");
-			}
-		}
+//		if(i==10)
+//		{
+//			if(gameObject.tag == "Weight")
+//			{
+//				GetComponent<Animator>().ResetTrigger("fade");
+//				GetComponent<Animator>().SetTrigger("fadeOut");
+//			}
+//		}
+//		if(i==11)
+//		{
+//			if(gameObject.tag == "Weight")
+//			{
+//				GetComponent<Animator>().ResetTrigger("fadeOut");
+//				GetComponent<Animator>().SetTrigger("fade");
+//			}
+//		}
 		if(i==12)
 		{
 			player.GetComponent<Animator>().ResetTrigger("Unlock");

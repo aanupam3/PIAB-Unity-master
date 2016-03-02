@@ -35,7 +35,7 @@ public class PlayerShrink : MonoBehaviour {
 		float barMax = scale.GetComponent<SpriteRenderer>().bounds.center.y+scale.GetComponent<SpriteRenderer>().bounds.extents.y-0.0f;
 		float barHeight = Mathf.Clamp(bar.transform.position.y-speed*Time.deltaTime,barMin,barMax);
 		bar.transform.position = new Vector3(bar.transform.position.x,barHeight,transform.position.z);
-		Debug.Log(bar.transform.position.y);
+//		Debug.Log(bar.transform.position.y);
 	}
 
 	void OnTriggerEnter2D(Collider2D other)

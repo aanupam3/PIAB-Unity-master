@@ -13,6 +13,7 @@ public class playerController : MonoBehaviour
 	RaycastHit2D rcast;
 	GameObject floor, particle, spawn, door; 
 	public static int score = 0;
+	float rcastDist;
 	// Use this for initialization
 	bool tut;
 	void Start()
@@ -26,6 +27,7 @@ public class playerController : MonoBehaviour
 		particle = GameObject.FindGameObjectWithTag("Particle");
 		spawn = GameObject.FindGameObjectWithTag("Spawn");
 		animator.SetTrigger("Lock");
+		rcastDist = rcast.distance;
 		if(Application.loadedLevelName == "Quantum1a")
 			animator.SetTrigger("Unlock");
 
@@ -50,25 +52,25 @@ public class playerController : MonoBehaviour
 		}
 
 			
-		if(Application.loadedLevelName == "Quantum1")
-		{
-			if(tutorialManagerQ.i<=12 || (tutorialManagerQ.i>=14 && tutorialManagerQ.i<17))
-			{
-				//Debug.Log ("hey");
-
-				if(grounded && Time.fixedTime>1)
-				{
-					playerRgb.simulated = false;
-				}
-			}
-			else
-			{
-				playerRgb.simulated = true;
-				animator.SetTrigger("Unlock");
-
-			}
-				
-		}
+//		if(Application.loadedLevelName == "Quantum1")
+//		{
+//			if(tutorialManagerQ.i<=12 || (tutorialManagerQ.i>=14 && tutorialManagerQ.i<17))
+//			{
+//				//Debug.Log ("hey");
+//
+//				if(grounded && Time.fixedTime>1)
+//				{
+//					playerRgb.simulated = false;
+//				}
+//			}
+//			else
+//			{
+//				playerRgb.simulated = true;
+//				animator.SetTrigger("Unlock");
+//
+//			}
+//				
+//		}
 			
 		float vertical = Input.GetAxis("Vertical");
 		float horizontal = Input.GetAxis("Horizontal");
@@ -107,15 +109,26 @@ public class playerController : MonoBehaviour
 		{
 			animator.SetInteger("Horizontal",-1);
 		}
+
 		if(Input.GetKey(KeyCode.Space) && Application.loadedLevelName == "classical" && grounded)
 		{
-			playerRgb.velocity = new Vector2(playerRgb.velocity.x,playerRgb.velocity.y + 1.6f);
+//			playerRgb.velocity = new Vector2(playerRgb.velocity.x,playerRgb.);
+			playerRgb.velocity = new Vector2(playerRgb.velocity.x,3f);
 			grounded = false;
 		}
 
-		grounded = gameObject.GetComponent<CircleCollider2D>().IsTouchingLayers();
+//
+//		grounded = false;//gameObject.GetComponent<CircleCollider2D>().IsTouchingLayers();
 		playerRgb.velocity = new Vector2(horizontal*speed,playerRgb.velocity.y);
-
+//		rcast = Physics2D.Raycast(new Vector2(transform.position.x,transform.position.y-0.4f),new Vector2(0,-1));
+//		if(rcast.collider.tag=="Floor")
+//		{
+//			if(rcast.distance>rcastDist)
+//				grounded = false;
+//			else
+//				grounded = true;
+//		}
+		Debug.Log(grounded);
 
 
 	}
@@ -130,10 +143,10 @@ public class playerController : MonoBehaviour
 //			//playerRgb.AddForce(transform.up*jumpForce);
 //			playerRgb.velocity = new Vector2(playerRgb.velocity.x,playerRgb.velocity.y + 2.8f);
 //		}
-//		if(other.tag == "Floor")
-//		{
-//			grounded = true;
-//		}
+		if((other.tag == "Floor" || other.name == "sliding_door (2)") && other2.contacts[0].point.y<transform.position.y)
+		{
+			grounded = true;
+		}
 		if(other.tag == "Particle")
 		{
 

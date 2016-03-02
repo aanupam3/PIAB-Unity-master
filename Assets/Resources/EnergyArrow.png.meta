@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 4c8305e3408bc4d7f9c9c4d679fd1c3d
-timeCreated: 1442365448
+guid: 07e1d2f1bc0104f64be214443d45ec88
+timeCreated: 1455586099
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Arrows_energy_levels_0
-    21300002: Arrows_energy_levels_1
-    21300004: Arrows_energy_levels_2
+    21300000: EnergyArrow_0
+    21300002: EnergyArrow_1
+    21300004: EnergyArrow_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -20,13 +20,13 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 8
+  cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
@@ -40,11 +40,12 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
@@ -52,7 +53,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Arrows_energy_levels_0
+    - name: EnergyArrow_0
       rect:
         serializedVersion: 2
         x: 0
@@ -62,7 +63,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Arrows_energy_levels_1
+      outline: []
+    - name: EnergyArrow_1
       rect:
         serializedVersion: 2
         x: 49
@@ -72,7 +74,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Arrows_energy_levels_2
+      outline: []
+    - name: EnergyArrow_2
       rect:
         serializedVersion: 2
         x: 95
@@ -82,6 +85,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
