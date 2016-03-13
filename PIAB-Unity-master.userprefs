@@ -1,17 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TutManagerQ1.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/playerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/TutManagerQ1.cs" Line="246" Column="69" />
-      <File FileName="Assets/Scripts/playerController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PsiCalc.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PotentialProfile.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/tutorialManagerQ.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EnergyLevels.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/weightScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/lightSourceScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/arrowManagerQ.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/arrowMotion.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/playerController.cs" Line="139" Column="55" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

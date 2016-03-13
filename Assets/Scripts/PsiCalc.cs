@@ -51,7 +51,7 @@ public class PsiCalc : MonoBehaviour {
 		else if(Application.loadedLevelName == "Quantum1a")
 			yOffset = 0.0f;
 		else
-			yOffset = 1.1f;
+			yOffset = 0.5f;
 		if(Application.loadedLevelName == "Quantum1")
 		{
 			Color c = new Color(255,255,255,0);
